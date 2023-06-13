@@ -58,7 +58,7 @@ https://www.bilibili.com/video/av89568075
 ### 本地开发环境配置
 + 克隆项目到本地
 ```
-git clone https://github.com/iamdarcy/hioshop-admin
+git clone https://github.com/iamdarcy/hioshop-admin-web  
 ```
 + 安装依赖
 ```
