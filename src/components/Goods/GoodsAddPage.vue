@@ -87,8 +87,8 @@
             >
               <div
                 v-for="(element, index) in gallery_list"
+                :key="index"
                 class="gallery-item"
-                v-if="element.is_delete == 0"
               >
                 <el-image
                   :preview-src-list="previewList"
@@ -530,8 +530,7 @@ export default {
           type: "warning",
         })
         .then(() => {
-          let arr = that.gallery_list;
-          arr[index].is_delete = 1;
+          that.gallery.splice(index, 1)
         })
         .catch(() => {});
     },
@@ -565,8 +564,7 @@ export default {
       let urlData = url + res.key;
       let data = {
         id: 0,
-        url: urlData,
-        is_delete: 0,
+        url: urlData
       };
       this.gallery_list.push(data);
     },
