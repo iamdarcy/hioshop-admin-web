@@ -18,7 +18,7 @@
                         <template slot-scope="scope">
                             <div v-if="scope.row.level==1" class="bg-gray">{{scope.row.name}}</div>
                             <div v-if="scope.row.level==2" class="bg-left">{{scope.row.name}}</div>
-                            <!-- {{ scope.row.level == 2 ? '　' : '' }} {{scope.row.name}} -->
+                            <!-- {{ scope.row.level == 2 ? ' ' : '' }} {{scope.row.name}} -->
                         </template>
                     </el-table-column>
                     <el-table-column label="图标显示" width="80">
