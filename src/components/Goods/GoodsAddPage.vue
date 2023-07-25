@@ -666,7 +666,7 @@ export default {
       //匹配图片（g表示匹配所有结果i表示区分大小写）
       let imgReg = /<img [^>]*src=['"]([^'"]+)[^>]*>/gi;
       //匹配src属性
-      let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
+      let srcReg = /src=['"]?([^'"]*)['"]?/i;
       let arr = str.match(imgReg);
       if (arr == null) {
         return false;
