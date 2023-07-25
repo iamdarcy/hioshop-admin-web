@@ -168,6 +168,7 @@
 <script>
 	import api from '@/config/api';
 	import lrz from 'lrz'
+	import hljs from 'highlight.js';
 	import moment from 'moment'
 	import draggable from 'vuedraggable'
 	import $ from 'jquery'
