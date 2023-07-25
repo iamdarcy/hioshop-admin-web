@@ -341,6 +341,7 @@
 <script>
 import api from "@/config/api";
 import lrz from "lrz";
+import hljs from 'highlight.js';
 import moment from "moment";
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';

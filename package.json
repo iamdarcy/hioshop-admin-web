@@ -18,6 +18,7 @@
     "clipboard": "^2.0.11",
     "core-js": "^3.30.1",
     "element-ui": "2.13.2",
+    "highlight.js": "^11.8.0",
     "jquery": "^3.6.3",
     "js-cookie": "2.2.0",
     "lrz": "^4.9.41",
