@@ -87,8 +87,8 @@
             >
               <div
                 v-for="(element, index) in gallery_list"
+                :key="index"
                 class="gallery-item"
-                v-if="element.is_delete == 0"
               >
                 <el-image
                   :preview-src-list="previewList"
@@ -341,6 +341,7 @@
 <script>
 import api from "@/config/api";
 import lrz from "lrz";
+import hljs from 'highlight.js';
 import moment from "moment";
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
@@ -530,8 +531,7 @@ export default {
           type: "warning",
         })
         .then(() => {
-          let arr = that.gallery_list;
-          arr[index].is_delete = 1;
+          that.gallery.splice(index, 1)
         })
         .catch(() => {});
     },
@@ -565,8 +565,7 @@ export default {
       let urlData = url + res.key;
       let data = {
         id: 0,
-        url: urlData,
-        is_delete: 0,
+        url: urlData
       };
       this.gallery_list.push(data);
     },
@@ -668,7 +667,7 @@ export default {
       //匹配图片（g表示匹配所有结果i表示区分大小写）
       let imgReg = /<img [^>]*src=['"]([^'"]+)[^>]*>/gi;
       //匹配src属性
-      let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
+      let srcReg = /src=['"]?([^'"]*)['"]?/i;
       let arr = str.match(imgReg);
       if (arr == null) {
         return false;

@@ -47,7 +47,7 @@
           v-model="checkedCities"
           @change="handleCheckedCitiesChange"
         >
-          <div v-for="item in tableData" class="list-wrap clearfix">
+          <div v-for="(item, index) in tableData" :key="index" class="list-wrap clearfix">
             <div class="header clearfix">
               <div class="left">
                 <div class="off-text" v-if="item.offline_pay">线下支付订单</div>
@@ -75,7 +75,7 @@
             </div>
             <div class="content-wrap clearfix">
               <div class="left">
-                <div class="goods-list" v-for="iitem in item.goodsList">
+                <div class="goods-list" v-for="(iitem, iindex) in item.goodsList" :key="iindex">
                   <img :src="iitem.list_pic_url" class="goods-img" />
                   <div class="goods-name">{{ iitem.goods_aka }}</div>
                   <div class="goods-number">
@@ -178,7 +178,7 @@
       <el-form :model="dform">
         <div class="dialog-wrap">
           <div class="list-wrap">
-            <div class="goods-list" v-for="ditem in orderInfo.goodsList">
+            <div class="goods-list" v-for="(ditem, dindex) in orderInfo.goodsList" :key="dindex">
               <img :src="ditem.list_pic_url" class="goods-img" />
               <div class="goods-name">{{ ditem.goods_name }}</div>
               <div class="goods-name">{{ ditem.goods_aka }}</div>

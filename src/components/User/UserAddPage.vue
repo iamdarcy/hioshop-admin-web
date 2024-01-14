@@ -69,7 +69,7 @@
                 <el-tab-pane label="足迹" name="fourth"></el-tab-pane>
             </el-tabs>
             <div class="form-table-box" v-if="this.pIndex == 0">
-                <div v-for="item in orderData" class="list-wrap clearfix">
+                <div v-for="(item, index) in orderData" :key="index" class="list-wrap clearfix">
                     <div class="header clearfix">
                         <div class="status-text">{{item.order_status_text}}</div>
                         <div class="add-time">{{item.add_time}}</div>
@@ -83,7 +83,7 @@
                     <div class="content-wrap clearfix">
 
                         <div class="left">
-                            <div class="goods-list" v-for="iitem in item.goodsList">
+                            <div class="goods-list" v-for="(iitem, iindex) in item.goodsList" :key="iindex">
 
                                 <img :src="iitem.list_pic_url" class="goods-img">
                                 <div class="goods-name">{{iitem.goods_name}}</div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="r">操作</div>
                     </div>
-                    <div class="bottom" v-for="item in addressData">
+                    <div class="bottom" v-for="(item, index) in addressData" :key="index">
                         <div class="l">
                             <div class="f1" style="width: 100px;">{{item.name}}</div>
                             <div class="f1" style="width: 100px;">{{item.mobile}}</div>

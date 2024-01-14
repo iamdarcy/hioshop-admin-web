@@ -238,7 +238,7 @@
               </div>
 
               <ul class="traces-wrap">
-                <li class="traces-list" v-for="item in expressData.traces">
+                <li class="traces-list" v-for="(item, index) in expressData.traces" :key="index">
                   <div class="traces-time">{{ item.time }}</div>
                   <div class="traces-content">{{ item.status }}</div>
                 </li>
@@ -305,7 +305,7 @@
           <label>{{ goodsData.goods_id }}</label>
         </el-form-item>
         <el-form-item label="商品图:" label-width="120px">
-          <template slot-scope="scope">
+          <template>
             <img
               :src="goodsData.list_pic_url"
               alt=""
