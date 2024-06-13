@@ -37,7 +37,7 @@
 </template>
 <script>
     import Sidebar from './Common/Sidebar';
-    import Navbar from './Common/Navbar';
+    // import Navbar from './Common/Navbar';
 
     export default {
         data() {
@@ -46,7 +46,7 @@
         },
         components: {
             Sidebar,
-            Navbar
+            // Navbar
         },
         methods: {
             handleOpen(key, keyPath) {
